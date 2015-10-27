@@ -1,0 +1,134 @@
+v     works for    23 < n < 3,825,123,056,546,413,051
+ 
+
+
+  v                                                                                                              <<
+7                                                                                                                ,
+4                                        >             >             >      >$0v                                 +
+*                                               >             >              $1v                                 5
+> >1+:                              :2\`#^_:2-!#^_:2%!#^_:9\`#^_:3%!#^_:5%!#^_1 :v                               5
+                                  v_v#+%3\`\4::_v#+%2\`\3::p13:+1g13<:_v#-+*<    3                               .
+                                  :>>           >                  $^       2    1
+                                  :|                                        9    p
+                                  6>\:11p1-0\>:2% !#v_v    v ++!!+1-g< #    ^5<  <                               :
+                                  \#         ^\+1\/2< \    >3-#v_$$  1>31g\  !|>                                 |
+                                  `! vp01p03p04 g11p12<        >:*11v1 >$1   #$^                                 >^
+                                  \  >120pv        v%g04*<v-1\    %g<^ \!!-1:<$0 
+                                  5  vg030<  v-1\  < >10g^   >\:::*11  g%1-!\^>^ 
+                                  %      >$1\> :#v_ $ 21g >:#^_$1-!!  ^
+                                  +  >:!#^_\1+\2v\ ^_^#!%2/\g03p<
+                                  >^ ^p02*2g02/ <>:*40g%20g2/:20^
+
+
+
+
+[1, 0] modExp :: a
+[2, 0] modExp :: bi
+[3, 0] modExp :: b
+[4, 0] modExp :: n
+
+[1, 1] witness :: n
+[2, 1] witness :: t
+
+[3, 1] isMRPrime :: a
+
+// http://en.wikipedia.org/wiki/Miller-Rabin_primality_test
+
+// ModularExp     [a, b, n] -> result
+
+
+>>>    40p30p10pv      v%g04*<
+        v030p021<v-1\  < >10g^  
+        g    >$1\> :#v_ $                    >>>
+        >>:!#^_\1+\2v\ ^_^#!%2/\g03p<
+         ^p02*2g02/ <>:*40g%20g2/:20^
+
+
+
+// Witness       [a, n] -> result
+
+>>>    :11p1-0\>:2% !#v_vv1-g11\!-1:\!-< 
+               ^\+1\/2< \>+!++3-#v_$$  1>     >>>
+       vp01p03p04 g11p12<        >:*11v% 
+       >120pv        v%g04*<v-1\    %g<g 
+       vg030<  v-1\  < >10g^   >\:::*11^ 
+           >$1\> :#v_ $ 21g >:#^_$1-!!  ^
+       >:!#^_\1+\2v\ ^_^#!%2/\g03p<
+       ^p02*2g02/ <>:*40g%20g2/:20^
+
+
+
+
+//#############################################################################
+
+bool isMRPrime(int n) 
+{
+	if (n <= 1)     return false;
+	if (n == 2)     return true;
+	if (n % 2 == 0) return false;
+	if (n < 9)      return true;
+	if (n % 3 == 0) return false;
+	if (n % 5 == 0) return false;
+
+	//  correct for n < 3,825,123,056,546,413,051
+	if (Witness(2, n)) return false;
+	if (Witness(3, n)) return false;
+	if (Witness(5, n)) return false;
+	if (Witness(7, n)) return false;
+	if (Witness(11, n)) return false;
+	if (Witness(13, n)) return false;
+	if (Witness(17, n)) return false;
+	if (Witness(19, n)) return false;
+	if (Witness(23, n)) return false;
+		
+	return true;
+}
+
+
+bool Witness(int a, int n) 
+{
+	int t = 0;
+	int u = n - 1;
+	while (u % 2 == 0) 
+	{
+		t++;
+		u /= 2;
+	}
+
+	long xi1 = ModularExp(a, u, n);
+	
+	for (; t > 0; t--) 
+	{
+		if (((xi1 * xi1) % n == 1) && (xi1 != 1) && (xi1 != (n - 1))) return true;
+		xi1 = (xi1 * xi1) % n;
+	}
+	
+	if (xi1 != 1) return true;
+	return false;
+}
+
+
+long ModularExp(int a, int b, int n) // (a^b) % n
+{
+	int k = 0;
+	int bt = b;
+	int bi = 1;
+	while (bt > 0) 
+	{
+		k++;
+		bt /= 2;
+		bi *= 2;
+	}
+
+	long d = 1;
+	
+	for (k--; k >= 0; k--) 
+	{
+		d = (d * d) % n;
+		bi /= 2;
+		
+		if (((b / bi) % 2) > 0) d = (d * a) % n;
+	}
+
+	return d;
+}

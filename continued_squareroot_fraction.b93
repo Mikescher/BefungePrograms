@@ -1,0 +1,34 @@
+v###
+ #####
+
+
+          v+1                                                                                                 ,++55<
+
+
+>       2 >::." =: ",,,,  0\                      951p11p021p131v      v12g14    p150 p13/g<
+                                                  vp01g03_v#-g01:_v#- <>g+31g/ :31g*21g-21v1
+                                                  >:30p:20 g\/+2/: 30g^^12p14:<>11g21g:*-3 ^
+                                                          >    #$ >$30g::*11g-||+g15-1g13p<
+                                                  ^p02:p010g11p1<             >>                              >.:! |
+                                                                                                              ^," "<
+
+
+
+ [10] (isqrt) pxk
+ [20] (isqrt) n
+ [30] (isqrt) xk
+
+ [11] (frac) sqrt
+ [21] (frac) add
+ [31] (frac) div
+ [41] (frac) isqrt(sqrt)
+ [51] (frac) first (9 when first loop)
+
+
+
+square-root continued fractions   ::    a        -->  frac(a)       // reversed on stack
+                                        (stack)  -->  (stack[])
+
+
+
+[http://www.maths.surrey.ac.uk/hosted-sites/R.Knott/Fibonacci/cfINTRO.html#section7]

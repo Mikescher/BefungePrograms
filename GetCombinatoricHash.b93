@@ -1,0 +1,37 @@
+v                   
+                             
+                             
+                             
+>  "!!!"**                 0\v   v\-1 <
+                        v+55:<>\1>9*\:|
+                        >%\:#^|#/+55\$<  
+                       >$ #\>#<>\# :#+_+        .@
+
+
+
+
+
+
+Calculates a combinatoric hash value (the digit order is ignored).
+hash = 9^1 * amountOf(0)
+     + 9^2 * amountOf(1)
+     + 9^3 * amountOf(2)
+     + 9^4 * amountOf(3)
+     + ...
+
+(stack) -> (stack)
+
+
+uses no [get] or [put]
+
+
+long GetCubeHash(long value)
+{
+	long sum = 0;
+	while (value > 0)
+	{
+		sum += (long)Math.Pow((long)9, (1 + value%10));
+		value /= 10;
+	}
+	return sum;
+}

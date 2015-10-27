@@ -1,0 +1,86 @@
+v###   v                                                                              <
+
+                                              >       >$30gv
+                                      vp01g03_^#-g01:_^#- <:
+                                      >:30p:20 g\/+2/: 30g^*
+                        >           >#^ #p #0 2 #<$      v
+> 98+  >1+:               :88*%"9"`#^_:88+%:9`#v_:2-#v_v   2
+                             >     >     >     > #     >$>$0>         . "  ",, :. 55+,^
+                        |!-8_^#-7:_^#-6:_^#-5:_^# -3:<     g 
+                                   >     ^<   0 <^:p010 <^<-!
+                        >:55+%:7-!#^_:3-!#^_2-!#^_:3%2-#^_^>^
+
+
+
+
+ [10] pxk           
+ [20] n      
+ [30] xk
+
+
+Is SquareNumber       ::    a        -->  sqrt(a)%1 == 0
+                            (stack)  -->  (stack)
+
+[https://en.wikipedia.org/wiki/Integer_square_root]
+[http://www.ask-math.com/properties-of-square-numbers.html]
+[http://www.johndcook.com/blog/2008/11/17/fast-way-to-test-whether-a-number-is-a-square]
+[http://stackoverflow.com/questions/295579/fastest-way-to-determine-if-an-integers-square-root-is-an-integer]
+
+~~~
+// Conditions for _NOT_ an square number 
+    x % 64  > 57        OR
+    x % 16  >  9        OR
+    x % 16 ==  2        OR
+    x % 16 ==  3        OR
+    x % 16 ==  5        OR
+    x % 16 ==  6        OR
+    x % 16 ==  7        OR
+    x % 16 ==  8        OR
+    x % 10 ==  2        OR
+    x % 10 ==  3        OR
+    x % 10 ==  7        OR
+    x %  3 ==  2 
+~~~
+
+
+//#############################################################################
+
+
+public bool isISqrt(int x)
+{
+	// http://www.ask-math.com/properties-of-square-numbers.html
+	// http://www.johndcook.com/blog/2008/11/17/fast-way-to-test-whether-a-number-is-a-square/
+	// http://stackoverflow.com/questions/295579/fastest-way-to-determine-if-an-integers-square-root-is-an-integer
+
+	if (x % 16 > 9) return false;
+	if (x % 64 > 57) return false;
+	if (x % 16 == 2) return false;
+	if (x % 16 == 3) return false;
+	if (x % 16 == 5) return false;
+	if (x % 16 == 6) return false;
+	if (x % 16 == 7) return false;
+	if (x % 16 == 8) return false;
+	if (x % 10 == 2) return false;
+	if (x % 10 == 3) return false;
+	if (x % 10 == 7) return false;
+	if (x % 3  == 2) return false;
+
+	return Math.Pow(isqrt(x), 2) == x;
+}
+
+// https://en.wikipedia.org/wiki/Integer_square_root
+int isqrt(int n)
+{
+	int pxk = 0;
+	int xk = n;
+	for (;;)
+	{
+		int nxk = (xk + n / xk) / 2;
+
+		if (nxk == xk) return xk;
+		if (nxk == pxk) return xk;
+
+		pxk = xk;
+		xk = nxk;
+	}
+}

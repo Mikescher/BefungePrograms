@@ -1,0 +1,35 @@
+﻿v 
+
+################################
+
+
+      >>>v
+      012>v
+      ^? 3v                                      v+1 <                     <
+>0>:  >??4>   "0"+\2p1+:" "-#v_$    " "10p      0>:!#^_:10g-!#v_::1-2g\2g`!|
+  ^   v? 5^                  v                   ^p2\g02:-1p2\ g2-1::p02g2:<
+  ^   678>^                  v                                $
+  ^   >>>^                   v                                @
+  ^                          v
+  ^<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+[10] arr-size
+[20] tmp
+
+---------------------------------------
+
+GNOME SORT
+==========
+
+
+/// http://www.dickgrune.com/Programs/gnomesort.html
+void gnomesort(int n, int ar[]) 
+{
+    int i = 0;
+    
+    while (i < n) 
+    {
+        if (i == 0 || ar[i-1] <= ar[i]) i++;
+        else {int tmp = ar[i]; ar[i] = ar[i-1]; ar[--i] = tmp;}
+    }
+}
