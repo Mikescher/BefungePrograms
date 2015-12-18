@@ -1,0 +1,44 @@
+v XX
+  YY
+>            v
+0124445326432
+8567899988288
+v            <
+
+
+>      94+2* 21p           94+ 31p             v
+v                                              <
+
+
+                 >3+g40g1+:31g%\31g/3+p40g:31   v >$$v
+    >0pv>20g-  #v v#                 <          #  $_v#`\g03<
+    2v0<^:g+3/g< ^ /g13\%g13:g04g+3/g 13\%g13:+1:p04:< >30g-|
+>01-^>::31g%\31^ v_$:0\:31g%\3 1g/3+p^>::31g%\31g/3+g::|    $
+     ^_v#-g12:+1<>:20g`#v_30p:>1-:1+  |         # ^  $$<    1  
+       $        ^      $># 2#  0 p# <$<0  p+3/g13\%g13:\0  +<
+       >@                     ^p+3/g13        \%<
+
+
+
+:40p:1+:31g%\31g/3+g40g:31g%\31g/      3+g40g1+:31g%\31g/3+p40g:31      g%\31g/3+p
+
+
+
+[20] max
+[30] search
+[40] temp
+
+[21] arr-size
+[31] arr-width
+
+
+
+
+---------------------------------------
+
+Almosted Sorted Distinct
+========================
+
+
+Replaces all repeated values in an array with zero.
+Works best on (almost) sorted lists (otherwise this is O(n^2))
