@@ -1,0 +1,32 @@
+v             v-1\5<  v*\<  
+              >:  >|  >\:|
+>  7          0\: ^>$:|  >$@
+                      >1\^
+                     
+
+
+[Stack] -> [Stack]
+
+
+Calculates `n^{Stack}` where `n` is a constant number (`5` in the code above)
+
+
+
+
+10^n version
+============
+
+v               v\+55<  v*\<  
+                >1->:|  >\:|
+>  4            0\ ^^>$:|  >$@
+                        >1\^
+
+
+
+
+Version 1.0 (doesn't accepts n^0)
+=================================
+
+v             v-1\5< v*\<  
+              >:  >| >\:|
+>  7          0\: ^>$^  >$@

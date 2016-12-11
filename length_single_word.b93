@@ -1,0 +1,17 @@
+vX
+              ELECTRICITY
+
+                  v         \+1\<
+> 72* 1      10p0\>:1+\10gg84*-#^_$ @
+
+
+
+[Stack<X> | Stack<Y>]  ->  [Stack]
+
+
+
+
+[10] temp
+
+read a word from the grid (until a space is encountered) and write its length to the stack
+X and Y is supplied via stack

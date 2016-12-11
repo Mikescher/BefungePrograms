@@ -1,0 +1,26 @@
+v
+                                 v        !:\<
+>  0"YOUTH"                  0\:!vv-1\5< v*\<+ 
+                             v   <>:  >| >\:|$
+                            v_"A"-0\: ^$>|  >^
+                            >$@     >:#<^>1\^
+
+
+[Stack] -> [Stack]
+
+Input  := zero-terminated string
+Output := 64bit number
+
+Calculate a hash value for the palindromic identity of a string.
+We use a base-5 number where every digit denotes the count of a specific lette rin the input
+(eg digit-1 = `count of letter A`, digit_2 = `coutn of letter B` ...)
+
+Base-5 means we only support numbers that have maximally five times the same letter.
+Five is the biggest base we can use with 64bit signed numbers (otherwise the number can get too big and overflow):
+~~~
+x^(26-1) = 2^(64-1)    <=>
+x = 2^(63/25)          <=>
+x = 5.735
+~~~
+With 32bit numbers the maximum would be `2`.
+
