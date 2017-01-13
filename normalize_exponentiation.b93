@@ -1,0 +1,32 @@
+v######
+                                   vp04+g04     <   vp06<             
+                                   #>1-#v\#/ #2<^      <:             
+                                  v<| :\<***"@}}"g01<>$ ^             
+>  "{pA"**7+  ".^OD"**\-             20p10p01>:2*10g`| |>             . @@@
+                                    >$30p0:4v^\+1\*2 <v<              
+                                  5>v  p05p0<     >>$40#+v            
+                                  0#>030g"}}@"**`!|^ $< *g            
+                                  g|!`g03***"@}}"2<p < :g2            
+                                  +>1+30g:*"}}@"**/30^ $00            
+                                  >50p30g2/30p20g50g>:!|6g            
+                                          > #2/#\\#-^#1<^<            
+
+
+
+#$watch[1,0]:int = ibase
+#$watch[2,0]:int = iexpo
+#$watch[3,0]:int = y
+#$watch[4,0]:int = exporp
+#$watch[5,0]:int = msum
+#$watch[6,0]:int = n
+
+
+Normalize exponent to base2   ::     base , exponent -->  norm(b, e)
+                                    (stack, stack)   -->  (stack)
+
+
+Recieves an exponentiation `base^exponent` an returns an approximation 
+for the corresponding base-2 exponentiation `2 ^ norm(b,e)`
+\see Euler-Problem-099 for C# implementation and more informations
+
+We use a fixed-point factor of 1,000,000 here
